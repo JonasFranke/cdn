@@ -11,5 +11,6 @@ FROM oven/bun:alpine
 
 WORKDIR /app
 COPY --from=builder /app/build .
+COPY --from=builder /app/static .
 
 ENTRYPOINT [ "bun" "run" "index.js" ]
